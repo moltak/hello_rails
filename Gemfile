@@ -26,6 +26,12 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "uglifier"
+gem "coffee-rails"
+gem "jquery-rails"
+gem "turbolinks"
+gem "jbuilder"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -58,6 +64,12 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "byebug"
+  gem "listen"
+  gem "spring"
+  gem "spring-watcher-listen"
+  gem "pg"
 end
 
 group :test do
@@ -65,5 +77,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
-gem "dockerfile-rails", ">= 1.6", :group => :development
