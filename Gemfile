@@ -45,6 +45,7 @@ gem "sass-rails", "~> 6.0"
 gem "uglifier", "~> 4.2"
 gem "jquery-rails", "~> 4.6"
 gem "turbolinks", "~> 5.2"
+gem 'bootstrap-sass', '~> 3.4.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
