@@ -18,6 +18,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if params[:user] && @user.update(user_params)
+      flash[:success] = 'Profile updated'
+      redirect_to @user
+    else
+      render 'edit', status: 422
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    render 'edit'
+  end
+
   private
 
   def user_params
