@@ -33,3 +33,8 @@ $ rails test
 $ rails server
 ​```
 자세한 것은 [Ruby on Rails Tutorial](https://www.railstutorial.org/)을 참고해주세요.
+
+guard 실행
+```bash
+$ bundle exec guard
+```
