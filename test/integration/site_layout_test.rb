@@ -13,5 +13,14 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
     get contact_path
     assert_select "title", full_title("Contact")
+
+    # 로그인 테스트
+    @user = users(:michael)
+    log_in_as(@user)
+
+    get root_path
+    assert_select "a[href=?]", users_path
+    assert_select "a[href=?]", user_path(@user)
+    assert_select "a[href=?]", edit_user_path(@user)
   end
 end
