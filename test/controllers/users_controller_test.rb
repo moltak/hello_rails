@@ -3,6 +3,7 @@ require "test_helper"
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
+    @admin = users(:michael)
     @other_user = users(:archer)
   end
 
@@ -67,6 +68,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_path(@user)
     end
     assert_redirected_to root_url
+  end
+
+  test '어드민은 유저를 삭제할 수 있어야한다.' do
+    log_in_as(@user)
+    assert_difference 'User.count', -1 do
+      delete user_path(@user)
+    end
   end
 end
 
